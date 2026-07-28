@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Invitación Digital - 15 Años</title>
+	<link rel="stylesheet" href="style.css">
+	<!-- Google Fonts & Font Awesome Icons -->
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+	<div class="contenedor">
+		<!-- ============================================== -->
+		<!-- PANTALLA 1: EL SOBRE DE ENTRADA                -->
+		<!-- ============================================== -->
+		<div class="marco" id="pantalla-sobre">
+			<div class="titulo">
+				TROPICAL ELEGANTE
+			</div>
+			<div class="fondo">
+				<div class="sobre">
+					<div class="carta">
+						<span class="corazon">♥</span>
+						<h2>Has recibido una</h2>
+						<h1>INVITACIÓN</h1>
+						<button id="abrir" onclick="abrirInvitacion()">Entrar aquí</button>
+					</div>
+					<div class="solapa-izquierda"></div>
+					<div class="solapa-derecha"></div>
+					<div class="solapa-abajo"></div>
+					<div class="sello" onclick="abrirInvitacion()">
+						XV
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ============================================== -->
+		<!-- PANTALLA 2: LA INVITACIÓN COMPLETA             -->
+		<!-- ============================================== -->
+		<div class="invitacion-scroll hidden" id="pantalla-invitacion">
+			
+			<!-- BANNER SUPERIOR -->
+			<div class="banner-estilo">
+				<span>TROPICAL ELEGANTE</span>
+			</div>
+
+			<!-- TARJETA 1: PORTADA CON VIDEO DE FONDO / MÚSICA -->
+			<section class="tarjeta hero-card">
+				<p class="subtitulo-xv">MIS 15 AÑOS</p>
+				<h1 class="nombre-titulo">MILENA</h1>
+	
+				<!-- CONTENEDOR DEL VIDEO -->
+				<div class="video-container">
+					<video id="video-invitacion" playsinline loop poster="inicio/img/foto.jpg">
+						<source src="video.mp4" type="video/mp4">
+						Tu navegador no soporta videos HTML5.
+					</video>
+					<!-- Botón superpuesto para pausar / reanudar -->
+					<button class="btn-control-video" onclick="toggleVideo()">
+						<i class="fa-solid fa-play" id="btn-video-icon"></i>
+					</button>
+				</div>
+			</section>
+
+			<!-- TARJETA 2: FOTO PRINCIPAL -->
+			<section class="tarjeta foto-card">
+				<img src="1.jpg" alt="Foto XV" class="foto-principal">
+			</section>
+
+			<!-- TARJETA 3: FRASE -->
+			<section class="tarjeta frase-card">
+				<span class="comillas">“</span>
+				<p class="frase-texto">
+					Hay momentos que no se pueden borrar, personas que no se pueden olvidar y recuerdos como estos que siempre voy a guardar en el corazón.
+				</p>
+			</section>
+
+			<!-- TARJETA 4: FOTO PRINCIPAL -->
+			<section class="tarjeta foto-card">
+				<img src="2.jpg" alt="Foto XV" class="foto-principal">
+			</section>
+
+			<!-- TARJETA 5: CUÁNDO / CUENTA REGRESIVA -->
+			<section class="tarjeta info-card">
+				<div class="icono-card"><i class="fa-regular fa-calendar-days"></i></div>
+				<h2>¿CUÁNDO?</h2>
+				<p class="fecha-destacada">22 DE AGOSTO DE 2026</p>
+				<p class="hora-destacada">22:00 HS</p>
+
+				<div class="countdown-box">
+					<p class="cuenta-titulo">FALTAN</p>
+					<div id="countdown" class="timer-grid">
+						<div class="time-item"><span id="days">00</span><small>DÍAS</small></div>
+						<span class="dos-puntos">:</span>
+						<div class="time-item"><span id="hours">00</span><small>HORAS</small></div>
+						<span class="dos-puntos">:</span>
+						<div class="time-item"><span id="minutes">00</span><small>MINS</small></div>
+						<span class="dos-puntos">:</span>
+						<div class="time-item"><span id="seconds">00</span><small>SEGS</small></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- TARJETA 4: FOTO PRINCIPAL -->
+			<section class="tarjeta foto-card">
+				<img src="3.jpg" alt="Foto XV" class="foto-principal">
+			</section>
+
+			<!-- TARJETA 6: DÓNDE Y MAPA -->
+			<section class="tarjeta mapa-card">
+				<div class="icono-card"><i class="fa-solid fa-location-dot"></i></div>
+				<h2>¿DÓNDE?</h2>
+				<p class="direccion-texto">
+					<strong>Spot Salón de Eventos</strong><br>
+					Acceso a Berazategui / Florencio Varela
+				</p>
+	
+				<!-- Enlace oficial al lugar registrado en Google Maps -->
+				<a href="https://www.google.com/maps/place/Spot+salon+de+eventos/@-34.8134405,-58.2033491,17z/data=!3m1!4b1!4m6!3m5!1s0x95a329000bd8836f:0x356fc29b7c3b8e0c!8m2!3d-34.8134405!4d-58.2033491!16s%2Fg%2F11sb4p6f__" target="_blank" class="btn-plateado">
+					<i class="fa-solid fa-map-location-dot" style="margin-right: 8px;"></i>CÓMO LLEGAR
+				</a>
+			</section>
+
+			<!-- TARJETA 4: FOTO PRINCIPAL -->
+			<section class="tarjeta foto-card">
+				<img src="4.jpg" alt="Foto XV" class="foto-principal">
+			</section>
+
+			<!-- TARJETA 7: CONFIRMACIÓN (RSVP) -->
+			<section class="tarjeta rsvp-card">
+				<div class="icono-card"><i class="fa-regular fa-envelope"></i></div>
+				<h2>CONFIRMÁ TU ASISTENCIA</h2>
+				<p class="desc-card">Es muy importante para mí saber si vas a poder acompañarme en esta noche especial.</p>
+				<a href="https://wa.me/+5491156134668" target="_blank" class="btn-blanco">CONFIRMAR AQUÍ</a>
+			</section>
+
+			<!-- TARJETA 8: FOTO PRINCIPAL -->
+			<section class="tarjeta foto-card">
+				<img src="5.jpg" alt="Foto XV" class="foto-principal">
+			</section>
+
+			<!-- TARJETA 9: DRESS CODE -->
+			<section class="tarjeta dresscode-card">
+				<div class="icono-card"><i class="fa-solid fa-user-tie"></i> <i class="fa-solid fa-person-dress"></i></div>
+				<h2>DRESS CODE</h2>
+				<p class="texto-bold">ELEGANTE SPORT</p>
+				<p class="reserva-color">Reservado el color azul noche para la cumpleañera</p>
+			</section>
+
+			<!-- TARJETA: LIBRO DE FIRMAS / MENSAJES -->
+			<section class="tarjeta mensajes-card">
+				<div class="icono-card"><i class="fa-regular fa-comments"></i></div>
+				<h2>TU MENSAJE</h2>
+				<p class="desc-card">
+					Cada palabra y cada deseo es un recuerdo único para guardar en el corazón.<br>
+				</p>
+	
+				<!-- REEMPLAZÁ EL LINK DE ABAJO POR EL QUE COPIASTE DE GOOGLE FORMS -->
+				<a href="https://forms.gle/TRQzmfXNMXsyVXvq8" target="_blank" class="btn-plateado">
+					Dejá tu mensaje especial
+				</a>
+			</section>
+
+			<!-- TARJETA 10: REGALOS -->
+			<section class="tarjeta regalos-card">
+				<div class="icono-card"><i class="fa-solid fa-gift"></i></div>
+				<h2>REGALOS</h2>
+				<p class="desc-card">Tu presencia es mi mejor regalo. Pero si querés hacerme un obsequio, podés aportar tu granito de arena acá.</p>
+				<button class="btn-plateado" onclick="mostrarModalCBU()">VER DATOS BANCARIOS</button>
+			</section>
+
+			<!-- VENTANA EMERGENTE (MODAL DATOS) -->
+			<div class="modal-cbu" id="modal-cbu" style="display: none;">
+				<div class="modal-contenido">
+					<span class="cerrar-modal" onclick="cerrarModalCBU()">&times;</span>
+					<h3>DATOS DE LA CUENTA</h3>
+		
+					<p style="margin-top: 15px;"><strong>Titular:</strong>milena</p>
+					<p><strong>Mercado Pago</strong></p>
+					<p><strong>Alias:</strong> <span id="alias-texto">262.autor.milena.mp</span></p>
+
+					<!-- BOTÓN PARA COPIAR EL ALIAS DIRECTO -->
+					<button class="btn-plateado" onclick="copiarAlias()" style="margin-top: 15px;">
+						<i class="fa-regular fa-copy" style="margin-right: 8px;"></i>COPIAR ALIAS
+					</button>
+				</div>
+			</div>
+
+			<!-- TARJETA 11: CARPETA COMPARTIDA DE FOTOS -->
+			<section class="tarjeta fotos-compartidas-card">
+				<div class="icono-card"><i class="fa-regular fa-images"></i></div>
+				<h2>CARPETA COMPARTIDA</h2>
+				<p class="desc-card">¡Subí acá las fotos y videos que saques durante la fiesta para guardarlos de recuerdo!</p>
+				<a href="https://drive.google.com/drive/folders/1MpdrwGKiXXFKxiz0ZcZ0uqZ08ZztcQPd?usp=sharing" 
+   					target="_blank" 
+   					style="display: block; width: 100%; padding: 12px 20px; background: linear-gradient(180deg, #e6ebf0 0%, #aab7c4 100%); color: #0b1528; font-weight: bold; text-decoration: none; border-radius: 12px; margin-top: 20px; text-align: center; box-sizing: border-box; font-size: 14px; letter-spacing: 1px;">
+    				SUBIR FOTOS
+				</a>
+			</section>
+
+			<!-- TARJETA 12: PLAYLIST DE SPOTIFY -->
+			<section class="tarjeta playlist-card">
+				<div class="icono-card"><i class="fa-solid fa-music"></i></div>
+				<h2>PLAYLIST</h2>
+				<p class="desc-card">¿Qué tema no puede faltar en la pista? ¡Sumalo a la lista de canciones!</p>
+				<a href="https://open.spotify.com/playlist/7g1Lq8AqAJ55V2rxzcYcwR?si=346cdc4dcdd84822&pt=f9b5c7434916cdf774a7a6d55e514bd1" 
+   					target="_blank" 
+   					style="display: block; width: 100%; padding: 12px 20px; background: linear-gradient(180deg, #e6ebf0 0%, #aab7c4 100%); color: #0b1528; font-weight: bold; text-decoration: none; border-radius: 12px; margin-top: 20px; text-align: center; box-sizing: border-box; font-size: 14px; letter-spacing: 1px;">
+    				AGREGAR CANCIÓN
+				</a>
+			</section>
+
+			<!-- TARJETA 13: MENÚ ESPECIAL -->
+			<section class="tarjeta menu-card">
+				<div class="icono-card"><i class="fa-solid fa-utensils"></i></div>
+				<h2>MENÚ ESPECIAL</h2>
+				<p class="desc-card">Avisame si tenés alguna restricción alimentaria (Celiaco, Vegetariano, Vegano).</p>
+				<a href="https://wa.me/+5491156134668" target="_blank" class="btn-blanco">INFORMAR MENÚ</a>
+			</section>
+
+			<!-- TARJETA 14: FOTO PRINCIPAL -->
+			<section class="tarjeta foto-card">
+				<img src="6.jpg" alt="Foto XV" class="foto-principal">
+			</section>
+
+			<!-- TARJETA 15: DESPEDIDA -->
+			<section class="tarjeta footer-card">
+				<p class="gracias-texto">¡TE ESPERO!</p>
+				<h1 class="nombre-titulo">MILENA</h1>
+			</section>
+
+		</div>
+	</div>
+
+	<!-- MODAL CBU / DATOS -->
+	<div class="modal-cbu" id="modal-cbu">
+		<div class="modal-contenido">
+			<span class="cerrar-modal" onclick="cerrarModalCBU()">&times;</span>
+			<h3>DATOS BANCARIOS</h3>
+			<p><strong>Alias:</strong> tu.alias.mp</p>
+			<p><strong>CBU:</strong> 0000003100012345678901</p>
+			<p><strong>Titular:</strong> Nombre Apellido</p>
+			<button class="btn-plateado" onclick="cerrarModalCBU()">CERRAR</button>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
