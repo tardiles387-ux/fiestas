@@ -63,7 +63,8 @@ function abrirInvitacion() {
 }
 
 // CUENTA REGRESIVA (Configurada para el 22 de Agosto de 2026)
-const fechaCumple = new Date("Aug 22, 2026 21:00:00").getTime();
+const fechaCumple = new Date("2026-08-22T21:00:00").getTime();
+
 
 const interval = setInterval(function() {
 	const ahora = new Date().getTime();
